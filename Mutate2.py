@@ -2,7 +2,7 @@
 # BIO
 # blosum
 # networkx
-# python -m pip install -U matplotlib
+    # python -m pip install -U matplotlib
 import numpy as np
 import blosum as bl
 import networkx as nx
@@ -96,7 +96,7 @@ s1 = "AAAGAATTCA"
 s2 = "AAATGA"
 r = showAlignmentG(s1, s2, affineGap, simpleMatch)
 
-data = np.genfromtxt(fname="FinalProject_4501/nextstrain_dengue_denv1_diversity.tsv", delimiter="\t", skip_header=1, filling_values=1)  # change filling_values as req'd to fill in missing values
+data = np.genfromtxt(fname="nextstrain_dengue_denv1_diversity.tsv", delimiter="\t", skip_header=1, filling_values=1)  # change filling_values as req'd to fill in missing values
 
 weights_arr = {}
 for i,d in enumerate(data):
@@ -191,13 +191,20 @@ def seq_amino_loc(name):
 
 seq, amino, loc = seq_amino_loc(the_file)
 seq2, amino2, loc2 = seq_amino_loc("DENV-1_IND_826883_1982.gb")
+print(seq)
+print(amino)
+print(loc)
+# map = r[2]
+# for i in range(years):
+#     choices = random.choices(list(weights_arr.keys()), list(weights_arr.values()), k =totmuts)
+#     # print(choices)
+#     # print(weights_arr[choices[0]])
+#     score = 0
+#     for choice in choices:
+#         if choice >= loc[0] and choice <= loc[1]:
+#             nt = random.choice(['A', 'C', 'G', 'T']) # NEED TO CHANGE THIS TO MIKE
+#             seq2[map[choice-start_loc]] = nt
 
-for i in range(years):
-    choices = random.choices(list(weights_arr.keys()), list(weights_arr.values()), k =totmuts)
-    print(choices)
-    print(weights_arr[choices[0]])
-    for choice in choices:
-        if choice >= loc[0] and choice <= loc[1]:
 
 # print(loc, loc2, amino, amino2, seq, seq2, sep="\n")
 # r = showAlignmentG(seq, seq2, affineGap, simpleMatch)
