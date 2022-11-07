@@ -1,15 +1,10 @@
+import time
+
 import numpy as np
-import blosum as bl
-import networkx as nx
-import matplotlib.pyplot as plt
 from itertools import chain
-from collections import defaultdict
-import random
-from Bio import GenBank
-from Bio.Seq import Seq
-import sys
 from Bio import SeqIO
 the_file = "random_sequence.gb"
+tic = time.perf_counter()
 def seq_amino_loc(name):
     amino_acid =""
     seq = ""
@@ -113,49 +108,80 @@ def create_map(s):
 # TCA"
 # s2 = "AAATGA"
 # r = showAlignmentG(seq, seq2, affineGap, simpleMatch)
-
-r = showAlignmentG(s1, s2, affineGap, simpleMatch)
+from Bio import pairwise2
+# print('here')
+alignments = pairwise2.align.globalxx(s1, s2)
+# print(alignments)
+# r = showAlignmentG(s1, s2, affineGap, simpleMatch)
 # map = {}
 counter = {'A':
         {
             'A':0,
             'T':0,
             'G':0,
-            'C':0
+            'C':0,
+            '-':0
         },
     'T':
         {
             'A':0,
             'T':0,
             'G':0,
-            'C':0
+            'C':0,
+            '-':0
         },
     'G':
         {
             'A':0,
             'T':0,
             'G':0,
-            'C':0
+            'C':0,
+            '-':0
         },
     'C':
         {
             'A':0,
             'T':0,
             'G':0,
-            'C':0
+            'C':0,
+            '-':0
+        },
+    "-":
+        {
+            'A':0,
+            'T':0,
+            'G':0,
+            'C':0,
+            '-':0
         }
 }
+def create_map2(s1, s2):
+    m = {}
+    j = 1
+    for i, char in enumerate(s1):
+        if char != '-' and s2[i] != '-':
+            m[i+1] = j
+            j+=1
+        else:
+            m[i+1] = '-'
 
-for key,val in r[2].items():
-    # print(key, val)
-    if val != "-":
-        # print(key, val)
-        counter[s1[key]][s2[val]] += 1
-        # print("ADD")
-# print(r[1])
-# print(counter[s1[1]][s2[1]])
-# print(counter)
+    return m
+ma = create_map2(s1,s2)
+# for key,val in ma.items():
+#     # print(key, val)
+#     if val != "-" and key != "-":
+#         # print(key, val)
+#         counter[s1[key]][s2[val]] += 1
+alignments = sorted(alignments, key= lambda x : x[4])
+print(alignments[0][0],alignments[0][1], sep='\n')
+a1,a2 = alignments[0][0],alignments[0][1]
+
+for i in range(len(a1)):
+    counter[a1[i]][a2[i]] += 1
+        # print("ADD"
 
 fil = open("random.txt", 'w')
 fil.write(str(counter))
 fil.close()
+toc = time.perf_counter()
+print(f"Time: {toc-tic} seconds")

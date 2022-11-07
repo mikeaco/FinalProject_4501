@@ -9,7 +9,6 @@ import networkx as nx
 import matplotlib.pyplot as plt
 from itertools import chain
 from collections import defaultdict
-import random
 from Bio import GenBank
 from Bio.Seq import Seq
 import sys
