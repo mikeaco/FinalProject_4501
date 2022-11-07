@@ -91,17 +91,23 @@ def affineGap(n, gp = -1, gn = -0.2):
 def simpleMatch(a, b):
     return 1 if a == b else -1
 
-def create_map(s):
+def create_map(s1, s2):
     m = {}
     j = 0
-    for i, char in enumerate(s):
-        if char != '-':
+    for i, char in enumerate(s1):
+        if char != '-' and s2[i] != '-':
             m[i] = j
             j+=1
         else:
-            m[i] = '-'
-
+            x = ''
+            if char == '-':
+                x = j+1
+                j+=2
+            if s2[i] == '-':
+                x = i
+            m[i] = x
     return m
+
 
 # s1, a1, loc =
 # s1 = "AAAGAAT
@@ -110,9 +116,9 @@ def create_map(s):
 # r = showAlignmentG(seq, seq2, affineGap, simpleMatch)
 from Bio import pairwise2
 # print('here')
-alignments = pairwise2.align.globalxx(s1, s2)
+# alignments = pairwise2.align.globalxx(s1, s2)
 # print(alignments)
-# r = showAlignmentG(s1, s2, affineGap, simpleMatch)
+r = showAlignmentG(s1, s2, affineGap, simpleMatch)
 # map = {}
 counter = {'A':
         {
@@ -155,30 +161,19 @@ counter = {'A':
             '-':0
         }
 }
-def create_map2(s1, s2):
-    m = {}
-    j = 1
-    for i, char in enumerate(s1):
-        if char != '-' and s2[i] != '-':
-            m[i+1] = j
-            j+=1
-        else:
-            m[i+1] = '-'
+ma = create_map(s1,s2)
+for key,val in ma.items():
+    # print(key, val)
+    if val != "-" and key != "-":
+        # print(key, val)
+        counter[s1[key]][s2[val]] += 1
+# alignments = sorted(alignments, key= lambda x : x[4])
+# print(alignments[0][0],alignments[0][1], sep='\n')
+# a1,a2 = alignments[0][0],alignments[0][1]
 
-    return m
-ma = create_map2(s1,s2)
-# for key,val in ma.items():
-#     # print(key, val)
-#     if val != "-" and key != "-":
-#         # print(key, val)
-#         counter[s1[key]][s2[val]] += 1
-alignments = sorted(alignments, key= lambda x : x[4])
-print(alignments[0][0],alignments[0][1], sep='\n')
-a1,a2 = alignments[0][0],alignments[0][1]
-
-for i in range(len(a1)):
-    counter[a1[i]][a2[i]] += 1
-        # print("ADD"
+# for i in range(len(a1)):
+#     counter[a1[i]][a2[i]] += 1
+#         # print("ADD"
 
 fil = open("random.txt", 'w')
 fil.write(str(counter))

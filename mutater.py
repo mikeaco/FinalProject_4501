@@ -13,7 +13,8 @@ from collections import defaultdict
 import glob
 import os
 
-pre_set = {'A': {'A': 13025, 'T': 7, 'G': 3, 'C': 6}, 'T': {'A': 8, 'T': 8030, 'G': 1, 'C': 8}, 'G': {'A': 17, 'T': 6, 'G': 9955, 'C': 5}, 'C': {'A': 3, 'T': 20, 'G': 5, 'C': 7275}}
+pre_set = {'A': {'A': 0, 'T': 7, 'G': 3, 'C': 6}, 'T': {'A': 8, 'T': 0, 'G': 1, 'C': 8}, 'G': {'A': 17, 'T': 6, 'G': 0, 'C': 5}, 'C': {'A': 3, 'T': 20, 'G': 5, 'C': 0}}
+# pre_set = {'A': {'A': 13025, 'T': 7, 'G': 3, 'C': 6}, 'T': {'A': 8, 'T': 8030, 'G': 1, 'C': 8}, 'G': {'A': 17, 'T': 6, 'G': 9955, 'C': 5}, 'C': {'A': 3, 'T': 20, 'G': 5, 'C': 7275}}
 
 def alignmentScoreDPG(s1, s2, gapPenalty, match):
     m = np.zeros((len(s1) + 1, len(s2) + 1))
