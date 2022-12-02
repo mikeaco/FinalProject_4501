@@ -6,9 +6,9 @@ How to use:
 
 clone this git repository
 ```bash
-git clone https://github.com/mikeaco/FinalProject_4501.git
+git clone https://github.com/mikeaco/muttseq.git
 
-cd FinalProject_4501
+cd muttseq
 #activate virtual environment
 ./venv/Scripts/activate
 #install requirements
