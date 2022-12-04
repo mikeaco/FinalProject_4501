@@ -57,8 +57,12 @@ future mutations to give us even more realistic mutations.
 Lastly, we changed the actual sequence file and the amino acid sequence and saved it to a genbank file so that it could be read again in the software
 depending on the reads. 
 
-Example:
-The following picture shows the similarity between the mutated file and a random dengue_1 sequence from the same time period. The first line is the original file we used and mutated according to the mutation rate and set it to 5 years in the future of our 2004 dengue sample. The second line is our original 2004 file. The third line is our 2009 random dengue_1 sample file we found from NextStrain. The yellow color shows how it is similar to the original. The green color shows that our file mutated the sequences correctly in the correct locations. The blue color shows that our file mutated an area that did not align with the random 2009 file. The red color shows that our file did not mutate an area that was mutated in the random 2009 sample. We also had areas where we mutated the file but it mutated to an incorrect nucleotide which can be seen in grey.
+#### Example:
+The following picture shows the similarity between the mutated file and a random dengue_1 sequence from the same time period. 
+The first line is the original file we used and mutated according to the mutation rate and set it to 5 years in the future of our 2004 dengue sample. 
+The second line is our original 2004 file. 
+The third line is our 2009 random dengue_1 sample file we found from NextStrain. 
+The yellow color shows how it is similar to the original. The green color shows that our file mutated the sequences correctly in the correct locations. The blue color shows that our file mutated an area that did not align with the random 2009 file. The red color shows that our file did not mutate an area that was mutated in the random 2009 sample. We also had areas where we mutated the file but it mutated to an incorrect nucleotide which can be seen in grey.
 ![picture of how different the three sequences are](https://github.com/mikeaco/muttseq/blob/master/output/t2_seq_change.jpg?raw=true)
 ### Possible TODO:
 None of this has any impact on our current application but are nice things we could see in our program.
