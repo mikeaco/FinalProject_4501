@@ -64,6 +64,8 @@ The second line is our original 2004 file.
 The third line is our 2009 random dengue_1 sample file we found from NextStrain. 
 The yellow color shows how it is similar to the original. The green color shows that our file mutated the sequences correctly in the correct locations. The blue color shows that our file mutated an area that did not align with the random 2009 file. The red color shows that our file did not mutate an area that was mutated in the random 2009 sample. We also had areas where we mutated the file but it mutated to an incorrect nucleotide which can be seen in grey.
 ![picture of how different the three sequences are](https://github.com/mikeaco/muttseq/blob/master/output/t2_seq_change.jpg?raw=true)
+(The full alignment can be found the output file called 3_sequence_alignment)
+
 ### Possible TODO:
 None of this has any impact on our current application but are nice things we could see in our program.
 * Phylogenetic tree creation - creating a phylogenetic tree to see the divergence from the sequences
