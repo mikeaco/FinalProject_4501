@@ -57,6 +57,8 @@ future mutations to give us even more realistic mutations.
 Lastly, we changed the actual sequence file and the amino acid sequence and saved it to a genbank file so that it could be read again in the software
 depending on the reads. 
 
+Correctness:
+![picture of how different the three sequences are](https://github.com/mikeaco/muttseq/blob/master/COMPBIO EVALUATION.jpg?raw=true)
 ### Possible TODO:
 None of this has any impact on our current application but are nice things we could see in our program.
 * Phylogenetic tree creation - creating a phylogenetic tree to see the divergence from the sequences
