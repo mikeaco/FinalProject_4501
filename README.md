@@ -71,5 +71,4 @@ The yellow color shows how it is similar to the original. The green color shows 
 ### Possible TODO:
 None of this has any impact on our current application but are nice things we could see in our program.
 * Phylogenetic tree creation - creating a phylogenetic tree to see the divergence from the sequences
-* Different mutation algorithm - our current set up is not as quick nor as actively changing as we had hoped so we can try different tasks.
 * Faster counter writeup - our current file reader and mutator takes for the setup takes hours to complete. This needs to be piped into multiple processes.
