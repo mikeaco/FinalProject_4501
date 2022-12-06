@@ -1,6 +1,8 @@
 # MUTaTe Pathogenetic SEQuences
 
-The purpose of this project is to simulate pathogenic mutations given a sequence of DNA and its history of mutation rates at each loci in its DNA sequence to determine if it is possible to predict future mutations. While mutations are generally considered to be random, there are factors that influence mutation rates at specific loci. This can be seen when look at historical envolutionary records for dengue virus, where mutation rates at specific loci appear to have much high incidents of nucleotide changes. It is important to note that some mutations, which occur at the nucleotide level, may not propogate to the amino acid level, thus not impacting fitness. If it is possible to accurately predict mutation rates at specific loci, the findings in the project may be useful to pharmaceutical companies who design vaccines. It can be speculated that such companies would like to anticipate where the most likely mutations are to occur for pathogenic targets. 
+#### A tool to simulate mutations in pathogenic sequences
+
+The purpose of this project is to simulate mutations given a DNA sequence and its history of mutation rates at each loci. While mutations are generally considered to be random, there are factors that influence mutation rates at specific loci. Even if there is no explaination to a difference in mutation rates at a given loci, historical data is available and may be useful for making predictions. For example, differences in mutation rates can be seen when looking at historical envolutionary records for Dengue Virus, as mutation rates at specific loci appear to have significantly higher incidents of nucleotide changes relative to other loci. By simulating mutations of a pathogenic sequence, it may be possible to determine the relative liklihood of future mutations and their locations. If it is possible to accurately predict mutation rates at specific loci, findings from this project may be useful to researchers and pharmaceutical companies who design vaccines. It can be speculated that such groups would like to anticipate where the mutations are most likely to occur in pathogenic targets, thus allowing them to best prepare for the future.
 
 This is a command line file. It will take in some required information and return mutated files.
 
@@ -50,9 +52,9 @@ We then take the sequences and mutate them in the areas chosen by our prediction
 Since a point mutation is defined as a change in the nucleotide we did not allow the mutated points to change 
 into themselves (A -> A).
 
-Next, we aligned the sequences together which was the lengthiest process but a necessary step. After we have teh sligned sequence and
+Next, we aligned the sequences together which was the lengthiest process but a necessary step. After we have the aligned sequence and
 mutation algorithm we mutated the area found the codon it was representing and checked the blosom score for the change
-and used that as a fitness function of how good the mutation is since the higher teh score the more likely
+and used that as a fitness function of how good the mutation is since the higher the score the more likely
 that it would happen in nature. In a future step, we will be isolating the top scoring sequences and rerunning them only for the 
 future mutations to give us even more realistic mutations. 
 
@@ -67,6 +69,9 @@ The third line is our 2009 random dengue_1 sample file we found from NextStrain.
 The yellow color shows how it is similar to the original. The green color shows that our file mutated the sequences correctly in the correct locations. The blue color shows that our file mutated an area that did not align with the random 2009 file. The red color shows that our file did not mutate an area that was mutated in the random 2009 sample. We also had areas where we mutated the file but it mutated to an incorrect nucleotide which can be seen in grey.
 ![picture of how different the three sequences are](https://github.com/mikeaco/muttseq/blob/master/output/t2_seq_change.jpg?raw=true)
 (The full alignment can be found the output file called 3_sequence_alignment)
+
+Evaluation:
+This method was evaluated by comparing selecting an original dengue virus sequence, simulating mutations, and comparing the resulting sequence to historical data of a later sequence from [NextStrain website](https://nextstrain.org/dengue/denv1?l=clock). It is important to note that the number of mutations simulated reflects the time elapsed between the original sequence and the later sequence using the average mutation rate for dengue virus. By doing so, mutations that actually occured can be compared to mutations that were simulated by the software. Seuqences with higher BLOSUM scores were considered to have greater fitness, and were thus likely to continue simulating mutations.
 
 ### Possible TODO:
 None of this has any impact on our current application but are nice things we could see in our program.
