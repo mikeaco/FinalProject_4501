@@ -57,6 +57,14 @@ future mutations to give us even more realistic mutations.
 Lastly, we changed the actual sequence file and the amino acid sequence and saved it to a genbank file so that it could be read again in the software
 depending on the reads. 
 
+
+Phylogentic Tree
+![alt text](phylo.png)
+
+This tree was generated using a module called [treetime](https://github.com/neherlab/treetime)
+
+Sequences with update_1 represent mutuated 1 year after the orignal , sequences with update_2 represent mutuated 2 year after the orignal and sequences with update_3 represents it mutated 3 years after the original. As the image shows the sequences with update_3 are a bit further than update_2 sequences and sequences with update_2 are a further than update_1 sequences.
+
 ### Possible TODO:
 None of this has any impact on our current application but are nice things we could see in our program.
 * Phylogenetic tree creation - creating a phylogenetic tree to see the divergence from the sequences
