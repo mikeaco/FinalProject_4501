@@ -25,9 +25,9 @@ full_list = []
 full_list.append("DENV-1_IND_826883_1982.gb")
 
 list_of_files2 = glob.glob("output2"+os.path.sep+"*.gb")
-list_of_files3 = glob.glob("output3"+os.path.sep+"*.gb")
-full_list += list_of_files2 + list_of_files3
-writer = open("all.fasta", 'w')
+# list_of_files3 = glob.glob("output3"+os.path.sep+"*.gb")
+full_list += list_of_files2
+writer = open("new_all.fasta", 'w')
 for file in full_list:
     seq, date, loc = seq_amino_loc(file)
     writer.write(">"+file + " " + date + "\n"+str(seq)+"\n")

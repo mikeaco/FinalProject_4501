@@ -101,6 +101,7 @@ def seq_amino_loc(name):
     end_loc = 0
     # date = ""
     with open(name) as handle:
+        # print(handle)
         record = SeqIO.read(handle, "genbank")
         date = record.annotations['date']
         for j in record.features:
@@ -153,6 +154,7 @@ for gb_file in list_of_files:
     file_num += 1
     for year in range(math.ceil(args.mutation_time)):
         print("Reading in genbank files and extracting gene sequence and locations...", end='')
+        print(change_file)
         seq2, amino2, loc2 = seq_amino_loc(change_file)
         print("Finished")
 
@@ -194,12 +196,13 @@ for gb_file in list_of_files:
         changed_date = int(changed_date[-4:]) + 1
         record.annotations['date'] = loc2[2][:-4] + str(changed_date)
         record.features.append(feature)
-        filename = "updated"+str(file_num)+".gb"
+        filename = os.path.basename(gb_file)[:-3]+"_updated_"+str(year+1)+".gb"
         complete_path = os.path.join(args.save_path, filename)
-        output_file = open(filename, "w")
+        # output_file = open(filename, "w")
         SeqIO.write(record, complete_path, "genbank")
+        # print(complete_path)
         change_file = complete_path
-        output_file.close()
+        # output_file.close()
         print(f"COMPLETED {year+1} year(s)")
 
 print("Program ended successfully")
