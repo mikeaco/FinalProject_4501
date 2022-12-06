@@ -71,6 +71,13 @@ The yellow color shows how it is similar to the original. The green color shows 
 ![picture of how different the three sequences are](https://github.com/mikeaco/muttseq/blob/master/output/t2_seq_change.jpg?raw=true)
 (The full alignment can be found the output file called 3_sequence_alignment)
 
+Phylogentic Tree
+![alt text](Phyl.png)
+
+This tree was generated using a module called [treetime](https://github.com/neherlab/treetime)
+
+Sequences with output2 represent mutuated 1 year after the orignal and sequences with output3 represents it mutated 3 years after the original. As the image shows the sequences with output3 are a bit longer than output2 sequences.
+
 Evaluation:
 This method was evaluated by comparing selecting an original dengue virus sequence, simulating mutations, and comparing the resulting sequence to historical data of a later sequence from [NextStrain website](https://nextstrain.org/dengue/denv1?l=clock). It is important to note that the number of mutations simulated reflects the time elapsed between the original sequence and the later sequence using the average mutation rate for dengue virus. By doing so, mutations that actually occured can be compared to mutations that were simulated by the software. Seuqences with higher BLOSUM scores were considered to have greater fitness, and were thus likely to continue simulating mutations.
 
