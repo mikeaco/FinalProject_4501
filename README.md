@@ -27,7 +27,7 @@ mutater.py is the script you need to run the program.
 * path - path to the genbank files
 * save path - path to where the output files should be saved
 
-This is how the parameters should look for the dengue virus:
+This is how the example parameters should look for the dengue virus:
 ```bash
 python mutater.py DENV-1_IND_826883_1982.gb nextstrain_dengue_denv1_diversity.tsv 0.000621 1 genbank_files output
 ```
