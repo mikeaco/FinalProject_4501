@@ -15,6 +15,7 @@ git clone https://github.com/mikeaco/muttseq.git
 cd muttseq
 #activate virtual environment
 ./venv/Scripts/activate
+# .\venv\Scripts\activate // for windows
 #install requirements
 pip install -r requirements.txt
 ```
