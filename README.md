@@ -1,5 +1,9 @@
 # MUTaTe Pathogenetic SEQuences
 
+#### A tool to simulate mutations in pathogenic sequences
+
+The purpose of this project is to simulate mutations given a DNA sequence and its history of mutation rates at each loci. While mutations are generally considered to be random, there are factors that influence mutation rates at specific loci. Even if there is no explaination to a difference in mutation rates at a given loci, historical data is available and may be useful for making predictions. For example, differences in mutation rates can be seen when looking at historical envolutionary records for Dengue Virus, as mutation rates at specific loci appear to have significantly higher incidents of nucleotide changes relative to other loci. By simulating mutations of a pathogenic sequence, it may be possible to determine the relative liklihood of future mutations and their locations. If it is possible to accurately predict mutation rates at specific loci, findings from this project may be useful to researchers and pharmaceutical companies who design vaccines. It can be speculated that such groups would like to anticipate where the mutations are most likely to occur in pathogenic targets, thus allowing them to best prepare for the future.
+
 This is a command line file. It will take in some required information and return mutated files.
 
 How to use:
