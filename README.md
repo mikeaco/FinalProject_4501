@@ -69,6 +69,8 @@ This tree was generated using a module called [treetime](https://github.com/nehe
 
 Sequences with update_1 represent mutuated 1 year after the orignal , sequences with update_2 represent mutuated 2 year after the orignal and sequences with update_3 represents it mutated 3 years after the original. As the image shows the sequences with update_3 are a bit further than update_2 sequences and sequences with update_2 are a further than update_1 sequences.
 
+Evaluation: This method was evaluated by comparing selecting an original dengue virus sequence, simulating mutations, and comparing the resulting sequence to historical data of a later sequence from NextStrain website. It is important to note that the number of mutations simulated reflects the time elapsed between the original sequence and the later sequence using the average mutation rate for dengue virus. By doing so, mutations that actually occured can be compared to mutations that were simulated by the software. Seuqences with higher BLOSUM scores were considered to have greater fitness, and were thus likely to continue simulating mutations.
+
 ### Possible TODO:
 None of this has any impact on our current application but are nice things we could see in our program.
 * Phylogenetic tree creation - creating a phylogenetic tree to see the divergence from the sequences
